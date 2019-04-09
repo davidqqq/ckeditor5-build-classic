@@ -27,13 +27,18 @@ import Paragraph from '@ckeditor/ckeditor5-paragraph/src/paragraph';
 import PasteFromOffice from '@ckeditor/ckeditor5-paste-from-office/src/pastefromoffice';
 import Table from '@ckeditor/ckeditor5-table/src/table';
 import TableToolbar from '@ckeditor/ckeditor5-table/src/tabletoolbar';
+// import CodeBlock  from "./codeblock/codeblock"
+import JavascriptCodeBlock  from "./code-block/js/javascript"
+import PythonCodeBlock  from "./code-block/python/python"
+import CKUploadAdapter  from "./uploadImage"
+import Highlight  from "./highlight"
 
 export default class ClassicEditor extends ClassicEditorBase {}
 
 // Plugins to include in the build.
 ClassicEditor.builtinPlugins = [
 	Essentials,
-	UploadAdapter,
+	// UploadAdapter,
 	Autoformat,
 	Bold,
 	Italic,
@@ -52,7 +57,12 @@ ClassicEditor.builtinPlugins = [
 	Paragraph,
 	PasteFromOffice,
 	Table,
-	TableToolbar
+	TableToolbar,
+	// CodeBlock,
+	PythonCodeBlock,
+	JavascriptCodeBlock,
+	CKUploadAdapter,
+	Highlight
 ];
 
 // Editor configuration.
@@ -71,7 +81,11 @@ ClassicEditor.defaultConfig = {
 			'insertTable',
 			'mediaEmbed',
 			'undo',
-			'redo'
+			'redo',
+			// 'codeBlock',
+			'javascriptCodeBlock',
+			'pythonCodeBlock',
+			'highlight'
 		]
 	},
 	image: {

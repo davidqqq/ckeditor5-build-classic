@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<title>CKEditor 5 – classic editor build – development sample</title>
+	<style>
+		body {
+			max-width: 800px;
+			margin: 20px auto;
+		}
+
+	</style>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/styles/default.min.css">
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/highlight.min.js"></script>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/styles/vs2015.min.css"/>
+</head>
+
+<body>
+		
+	<h1>CKEditor 5 – classic editor build – development sample</h1>
+	<div >
+		<pre><code class="hljs javascript">function(){console.log("Hello World!")}</code></pre>
+	</div>
+	<div class="output"></div>
+	<paper-button></paper-button>
+	<div class="ck-content" id="editor">
+			
+		<!-- <h2>Sample</h2>
+
+		<p>This is an instance of the <a href="https://ckeditor.com/docs/ckeditor5/latest/builds/guides/overview.html#classic-editor">classic
+				editor build</a>.</p>
+
+		<figure class="image">
+			<img src="tests/manual/sample.jpg" alt="Autumn fields" />
+		</figure>
+
+		<p>You can use this sample to validate whether your <a href="https://ckeditor.com/docs/ckeditor5/latest/builds/guides/development/custom-builds.html">custom
+				build</a> works fine.</p> -->
+	</div>
+
+	<script src="build/ckeditor.js"></script>
+
+	<script>
+		// hljs.initHighlightingOnLoad();
+		ClassicEditor.create(document.querySelector('#editor'), {
+				ckImageUpload: {
+					uploadUrl: 'http://localhost:3000/api/post/article/image/2',
+					formField: 'photo',
+				},
+			})
+			.then(editor => {
+				window.editor = editor;
+
+editor.setData(`<p>Vue template compiler can parse HTML string and render Vue component dynamically. CkEditor saves editable content in the form of HTML string. Does that mean we can save Vue components in CkEditor content and have Vue template compiler to render them dynamically? If this theory works, we can create explorable blog that is much more fun than traditional blog! &nbsp;Of course, there are going to be more entailing tricky issues like how components interact one another and it is secured at all. da yeyeyeye?</p><pre><code class="js hljs"><p>schema.register( 'myElement', { allowIn: '$root' } );</p></code></pre><p>It is confirmed that if a Vue component in string format is saved together with CkEditor generated template, it can be rendered dynamically. The key is how we can extent CkEditor to include Vue components. It turns out it isn't that simple. One has to implement schema in CkEditor5 and go through the ordain of understanding its architecture.&nbsp;</p><pre><code class="js hljs"><p>schema.register( 'myElement', { allowIn: '$root' } );</p></code></pre><p>&nbsp;</p><p>..</p><p>Up till today, the documentation on its websites has no complete tutorial on how to create a plugin. <a href="https://twitter.com/reinmarpl/status/1085204333350842369">Good news is that it is coming soon.</a></p>`)
+				editor.model.document.on('change', () => {
+						document.querySelector(".output").innerHTML = editor.getData()
+						document.querySelector(".output").querySelectorAll('.hljs').forEach(
+							block => hljs.highlightBlock(block)
+						)
+						// hljs.initHighlighting.called=false
+						// hljs.highlightBlock(document.querySelector(".output code"))
+					}
+
+				)
+			})
+			.catch(err => {
+				console.error(err.stack);
+			});
+
+	</script>
+
+</body>
+
+</html>
+
+<style>
+
+</style>

@@ -12,7 +12,7 @@ import ButtonView from '@ckeditor/ckeditor5-ui/src/button/buttonview';
 
 
 import boldIcon from '@ckeditor/ckeditor5-core/theme/icons/pencil.svg'
-const PAINTITGREEN = 'highlight';
+const PAINTITGREEN = 'paintitgreen';
 
 /**
  * The PAINTITGREEN UI feature. It introduces the PAINTITGREEN button.

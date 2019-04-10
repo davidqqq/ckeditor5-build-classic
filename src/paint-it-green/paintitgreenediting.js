@@ -20,7 +20,7 @@ const PAINTITGREEN = 'paintitgreen';
  *
  * @extends module:core/plugin~Plugin
  */
-export default class HighlightEditing extends Plugin {
+export default class PaintitgreenEditing extends Plugin {
 	/**
 	 * @inheritDoc
 	 */

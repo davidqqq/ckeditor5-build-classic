@@ -32,6 +32,7 @@ import JavascriptCodeBlock  from "./code-block/js/javascript"
 import PythonCodeBlock  from "./code-block/python/python"
 import CKUploadAdapter  from "./uploadImage"
 import Highlight  from "./highlight"
+import Paintitgreen  from "./paintitgreen"
 
 export default class ClassicEditor extends ClassicEditorBase {}
 
@@ -62,7 +63,8 @@ ClassicEditor.builtinPlugins = [
 	PythonCodeBlock,
 	JavascriptCodeBlock,
 	CKUploadAdapter,
-	Highlight
+	Highlight,
+	Paintitgreen
 ];
 
 // Editor configuration.
@@ -85,7 +87,8 @@ ClassicEditor.defaultConfig = {
 			// 'codeBlock',
 			'javascriptCodeBlock',
 			'pythonCodeBlock',
-			'highlight'
+			'highlight',
+			'paintitgreen'
 		]
 	},
 	image: {

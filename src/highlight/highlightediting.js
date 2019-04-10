@@ -34,12 +34,15 @@ export default class HighlightEditing extends Plugin {
 		editor.conversion.attributeToElement( {
 			model: HIGHLIGHT,
 			view: {
-				name:'span',
+				name:'code',
 				styles: { 
-					'background-color': 'green',
-					'color': 'white' 
+					'background-color': 'rgba(0,0,0,.05)',
+					'padding': '3px 4px',
+    				'margin':'0 2px',
+    				'font-family': 'Menlo,Monaco,"Courier New",Courier,monospace',
+    				'font-size': '16px'
 			   }	   
-			},
+			}
 		} );
 
 		// Create highlight command.

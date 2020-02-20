@@ -25,18 +25,15 @@ import TableToolbar from "@ckeditor/ckeditor5-table/src/tabletoolbar.js";
 import Essentials from "@ckeditor/ckeditor5-essentials/src/essentials.js";
 import Paragraph from "@ckeditor/ckeditor5-paragraph/src/paragraph.js";
 
-// The editor creator to use.
-import ClassicEditorBase from '@ckeditor/ckeditor5-editor-classic/src/classiceditor';
-
 import CodeBlock from '@ckeditor/ckeditor5-code-block/src/codeblock';
-// import UploadImage from "./uploadImage";
-export default class ClassicEditor extends ClassicEditorBase {}
+import UploadImage from "./uploadImage";
+export default class Editor extends ClassicEditor {}
 
 // Plugins to include in the build.
-ClassicEditor.builtinPlugins = [
+Editor.builtinPlugins = [
 	Essentials,
-	UploadAdapter,
-	// Autoformat,
+	// UploadAdapter,
+	Autoformat,
 	Bold,
 	Italic,
 	BlockQuote,
@@ -44,19 +41,19 @@ ClassicEditor.builtinPlugins = [
 	// EasyImage,
 	Heading,
 	Image,
-	// ImageCaption,
-	// ImageStyle,
-	// ImageToolbar,
+	ImageCaption,
+	ImageStyle,
+	ImageToolbar,
 	ImageUpload,
 	Indent,
 	Italic,
 	Link,
 	List,
-	// MediaEmbed,
-	// Paragraph,
-	// PasteFromOffice,
-	// Table,
-	// TableToolbar,
-	// CodeBlock
-	// UploadImage
+	MediaEmbed,
+	Paragraph,
+	PasteFromOffice,
+	Table,
+	TableToolbar,
+	CodeBlock,
+	UploadImage
 ];
